@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .navbar {
+        @apply bg-black text-white fixed w-full top-0;
+    }
+    
+    .botao-navbar {
+        @apply text-xl font-semibold p-3 cursor-pointer rounded-sm transition duration-200 hover:bg-white hover:text-black hover:-translate-y-1;
+    }
+}
