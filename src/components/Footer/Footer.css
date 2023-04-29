@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .main-footer {
+        @apply bg-black text-white mt-7
+    }
+
+    .container-footer {
+        @apply container mx-auto py-5
+    }
+
+    .area-itens-footer {
+        @apply flex flex-col gap-y-9
+    }
+
+    .redes-sociais {
+        @apply flex gap-x-5 justify-center text-4xl
+    }
+
+    .icone-rede-social {
+        @apply cursor-pointer transition duration-150
+    }
+
+    .icone-rede-social:hover {
+        @apply -translate-y-1
+    }
+
+    .divisao-footer {
+        @apply border-t mx-5
+    }
+
+    .texto-informacao {
+        @apply text-center text-gray-400 px-5
+    }
+
+    .texto-copyright {
+        @apply text-center text-gray-200 px-5 font-semibold
+    }
+}
