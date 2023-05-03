@@ -3,7 +3,7 @@ import Jordan from '../../assets/jordan.webp';
 function Produtos(props) {
     return (
         <>
-            <section className=" container mx-auto">
+            <section className="container mx-auto">
                 <div className="flex flex-col">
                     <div className="text-2xl font-bold text-center">
                         {props.nome}
