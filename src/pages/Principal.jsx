@@ -11,6 +11,7 @@ function Principal() {
             <Carrossel />
             <Categorias />
             <Produtos nome="PROMOÇÕES" />
+            <Produtos nome="SAINDO EM BREVE" />
             <Footer />
         </>
     );
