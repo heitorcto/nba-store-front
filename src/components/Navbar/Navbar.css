@@ -52,6 +52,14 @@
     }
 
     .botao-menu-mobile {
-        @apply border rounded-md text-2xl py-3 text-center
+        @apply border rounded-md text-lg py-1 text-center
+    }
+
+    .icone {
+        @apply text-5xl transition duration-300 opacity-100
+    }
+
+    .classe-transicao-icone {
+        @apply rotate-90 transition duration-300 opacity-0
     }
 }

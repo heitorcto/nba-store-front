@@ -5,13 +5,31 @@ import Logo  from '../../assets/logo-nba.png';
 
 function Principal() {
     const [menuMobile, setMenuMobile] = useState(false);
+    const [transicaoIcone, setTransicaoIcone] = useState('');
+    const [exibirAnimarMenu, setExibirAnimarMenu] = useState('-translate-y-96 opacity-0 hidden');
 
     const mudarEstadoMobile = () => {
+        setTransicaoIcone('classe-transicao-icone');
+
         if (menuMobile === false) {
-            setMenuMobile(true);
+            setExibirAnimarMenu('-translate-y-96 opacity-0');
+            setTimeout(() => {
+                setMenuMobile(true);
+                setExibirAnimarMenu('translate-y-2 opacity-100 block');
+            }, 300);
         } else if (menuMobile === true) {
-            setMenuMobile(false);
+            setTimeout(() => {
+                setMenuMobile(false);
+                setExibirAnimarMenu('-translate-y-96 opacity-0');
+            }, 300);
+            setTimeout(() => {
+                setExibirAnimarMenu('-translate-y-96 opacity-0 hidden');
+            }, 500);
         }
+
+        setTimeout(() => {
+            setTransicaoIcone('');
+        }, 350);
     };
 
     return (
@@ -43,22 +61,28 @@ function Principal() {
                         <div className='area-icone-menu-mobile'>
                             <div className='posicionamento-menu-mobile'>
                                 <div className='cursor-pointer' onClick={() => mudarEstadoMobile()}>
-                                    { !menuMobile && <FaBars className='text-5xl' /> }
-                                    { menuMobile && <FaTimes className='text-5xl' /> }
+                                    { !menuMobile && <FaBars className={`icone ${transicaoIcone}`} /> }
+                                    { menuMobile && <FaTimes className={`icone ${transicaoIcone}`} /> }
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    { menuMobile &&
-                        <div className='itens-menu-mobile'>
-                            <div className='botao-menu-mobile'>Teste</div>
-                            <div className='botao-menu-mobile'>Teste</div>
-                            <div className='botao-menu-mobile'>Teste</div>
-                        </div>
-                    }
+                    </div>
                 </div>
             </div>
+
+            <div className={`fixed top-20 w-full bg-black text-white transition duration-300 ${exibirAnimarMenu}`}>
+                <div className='itens-menu-mobile'>
+                    <div className='botao-menu-mobile'>Teste</div>
+                    <div className='botao-menu-mobile'>Teste</div>
+                    <div className='botao-menu-mobile'>Teste</div>
+                    <div className='botao-menu-mobile'>Teste</div>
+                    <div className='botao-menu-mobile'>Teste</div>
+                    <div className='botao-menu-mobile'>Teste</div>
+                    <div className='botao-menu-mobile'>Teste</div>
+                </div>
+            </div>
+
         </nav>
     );
 }
